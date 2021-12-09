@@ -1,0 +1,31 @@
+.header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #0d0614;
+    position: sticky;
+    top: 0;
+    color: white;
+}
+
+.header-logo {
+    width: 100px;
+    object-fit: contain;
+    margin: 0 20px;
+    margin-top: 18px;
+}
+
+.header-search {
+}
+
+.header-search-input {
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav-option {
+    display: flex;
+    flex-direction: column;
+}
