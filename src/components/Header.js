@@ -1,27 +1,39 @@
 import React from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import { Link } from "react-router-dom";
+
 import "../styles/Header.css";
 
 function Header() {
     return (
         <div className="header">
-            <img className="header-logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="not found" />
-
-            <div className="header-search">
-                <input type="text" className="header-search-input" />
+            <Link to="/">
+                <img className="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="not found" />
+            </Link>
+            <div className="header__searchContainer">
+                <input type="text" className="header__search__input" />
+                <SearchIcon className="header__searchIcon"></SearchIcon>
             </div>
-            <div className="header-nav">
-                <div className="header-nav-option">
-                    <span className="header-nav-option-lineOne">Hello</span>
-                    <span className="header-nav-option-lineTwo">Sign in</span>
+            <div className="header__nav">
+                <div className="header__navOption">
+                    <span className="navOption__lineOne">Hello</span>
+                    <span className="navOption__lineTwo">Sign in</span>
                 </div>
-                <div className="header-nav-option">
-                    <span className="header-nav-option-lineOne">Returns</span>
-                    <span className="header-nav-option-lineTwo">& Orders</span>
+                <div className="header__navOption">
+                    <span className="navOption__lineOne">Returns</span>
+                    <span className="navOption__lineTwo">&#38; Orders</span>
                 </div>
-                <div className="header-nav-option">
-                    <span className="header-nav-option-lineOne">Your</span>
-                    <span className="header-nav-option-lineTwo">Prime</span>
+                <div className="header__navOption">
+                    <span className="navOption__lineOne">Your</span>
+                    <span className="navOption__lineTwo">Prime</span>
                 </div>
+                <Link to="/checkout">
+                    <div className="header___option__subtotal">
+                        <ShoppingBasketIcon className="header__basketIcon"></ShoppingBasketIcon>
+                        <span className="navOption__lineTwo header__basketCount">0</span>
+                    </div>
+                </Link>
             </div>
         </div>
     );
