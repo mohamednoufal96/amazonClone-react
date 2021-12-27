@@ -13,48 +13,55 @@ export default function Home() {
 
             <div className="home__row">
                 <Product
-                    title="The Real Anthony Fauci: Bill Gates"
+                    id="5234523"
+                    title="The Real Anthony Fauci: Bill Gates, Big Pharma, and the Global War on Democracy…"
                     image="https://images-na.ssl-images-amazon.com/images/I/51wH91YObNL._AC_SX184_.jpg"
                     price={99.99}
                     rating={5}
                 />
                 <Product
-                    title="The Real Anthony Fauci: Bill Gates"
-                    image="https://images-na.ssl-images-amazon.com/images/I/51wH91YObNL._AC_SX184_.jpg"
+                    id="34234123"
+                    title="Atlas of the Heart: Mapping Meaningful Connection and the Language of Human…"
+                    image="https://images-na.ssl-images-amazon.com/images/I/91DNhLLmUOL._AC_UL210_SR195,210_.jpg"
                     price={99.99}
                     rating={5}
                 />
             </div>
             <div className="home__row">
                 <Product
+                    id="5454545"
                     title="The Real Anthony Fauci: Bill Gates,"
                     image="https://images-na.ssl-images-amazon.com/images/I/51wH91YObNL._AC_SX184_.jpg"
-                    price={99.99}
+                    price={43}
                     rating={5}
                 />
                 <Product
-                    title="The Real Anthony Fauci: Bill Gates"
-                    image="https://images-na.ssl-images-amazon.com/images/I/51wH91YObNL._AC_SX184_.jpg"
-                    price={99.99}
+                    id="5565664"
+                    title="2022 National Park Foundation Wall Calendar: 12-Month Nature Calendar &…"
+                    image="https://images-na.ssl-images-amazon.com/images/I/A1gJMNy3K7L._AC_UL210_SR195,210_.jpg"
+                    price={34}
                     rating={5}
                 />
                 <Product
-                    title="The Real Anthony Fauci: Bill Gates"
-                    image="https://images-na.ssl-images-amazon.com/images/I/51wH91YObNL._AC_SX184_.jpg"
-                    price={99.99}
+                    id="42352352"
+                    title="Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones"
+                    image="https://images-na.ssl-images-amazon.com/images/I/A1gJMNy3K7L._AC_UL254_SR254,254_.jpg"
+                    price={12}
                     rating={5}
                 />
             </div>
             <div className="home__row">
                 <Product
-                    title="The Real Anthony Fauci: Bill Gates"
-                    image="https://images-na.ssl-images-amazon.com/images/I/51wH91YObNL._AC_SX184_.jpg"
-                    price={99.99}
+                    id="6574567"
+                    title="Sold on a Monday: A Novel"
+                    image="https://images-na.ssl-images-amazon.com/images/I/81bD6Ll-seL._AC_UL210_SR195,210_.jpg"
+                    price={132}
                     rating={5}
                 />
                 <Product
-                    title="The Real Anthony Fauci: Bill Gates"
-                    image="https://images-na.ssl-images-amazon.com/images/I/51wH91YObNL._AC_SX184_.jpg"
+                    id="5625272"
+                    title="The Screaming Goat (Book & Figure)"
+                    image="https://images-na.ssl-images-amazon.com/images/I/91vS2L5YfEL._AC_UL127_SR127,127_.jpg"
                     price={99.99}
                     rating={5}
                 />
