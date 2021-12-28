@@ -5,14 +5,12 @@
 }
 
 .checkout__left {
-    /* flex: 0.6; */
     width: 100%;
 }
 
 .checkout__adImage {
     width: 100%;
     max-height: 120px;
-    /* object-fit: contain; */
     margin-bottom: 10px;
 }
 

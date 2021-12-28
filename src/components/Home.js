@@ -31,7 +31,7 @@ export default function Home() {
                 <Product
                     id="5454545"
                     title="The Real Anthony Fauci: Bill Gates,"
-                    image="https://images-na.ssl-images-amazon.com/images/I/51wH91YObNL._AC_SX184_.jpg"
+                    image="https://images-na.ssl-images-amazon.com/images/I/5111N6ROJWL._AC_SX184_.jpg"
                     price={43}
                     rating={5}
                 />

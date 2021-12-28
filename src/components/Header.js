@@ -8,9 +8,7 @@ import { useStateValue } from "../StateProvider";
 const linkStyle = { textDecoration: "none", color: "white" };
 
 export default function Header() {
-    
-    const [{basket}] = useStateValue()
-    
+    const [{ basket }] = useStateValue();
 
     return (
         <div className="header">
@@ -24,7 +22,9 @@ export default function Header() {
             <div className="header__nav">
                 <div className="header__navOption">
                     <span className="navOption__lineOne">Hello</span>
-                    <span className="navOption__lineTwo">Sign in</span>
+                    <Link to="/login" style={linkStyle}>
+                        <span className="navOption__lineTwo">Sign in</span>
+                    </Link>
                 </div>
                 <div className="header__navOption">
                     <span className="navOption__lineOne">Returns</span>
