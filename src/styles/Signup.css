@@ -1,4 +1,4 @@
-.login {
+.signup {
     height: 100vh;
     background-color: #fff;
     display: flex;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.login img {
+.signup img {
     display: block;
     width: 100px;
     height: 80px;
@@ -14,9 +14,10 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
+    cursor: pointer;
 }
 
-.login__container {
+.signup__container {
     width: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -27,15 +28,15 @@
     padding: 20px;
 }
 
-.login__title {
+.signup__title {
     margin-bottom: 10px;
 }
 
-.login__container form h5{
+.signup__container form h5 {
     margin-bottom: 10px;
 }
 
-.login__container form input{
+.signup__container form input {
     width: 95%;
     height: 30px;
     color: #000;
@@ -44,8 +45,7 @@
     border: 1px solid #000000;
 }
 
-
-.login__signInButton {
+.signup__container form button {
     width: 95%;
     height: 30px;
     margin-bottom: 10px;
@@ -58,27 +58,6 @@
     transition: ease-in-out 0.2s;
 }
 
-.login__createAccountButton {
-    width: 95%;
-    height: 30px;
-    margin-bottom: 10px;
-    background-color: rgb(204, 200, 200);
-    border: 1px solid #000;
-    color: black;
-    font-weight: 700;
-    cursor: pointer;
-    transition: ease-in-out 0.2s;
-}
-
-.login__signInButton:hover {
+.signup__container form button:hover {
     background-color: #e99528;
-}
-.login__createAccountButton:hover {
-    background-color: rgb(160, 156, 156);
-}
-
-.login__description {
-    width: 95%;
-    margin-bottom: 10px;
-    font-size: 12px;
 }

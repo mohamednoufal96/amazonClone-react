@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Home.css";
 import Product from "./Product";
+import axios from "axios";
 
 export default function Home() {
+    const API_URL = require("../constants").API_URL;
+
+    // const [data, setData] = useState([]);
+
+    // useEffect(() => {
+    //     debugger;
+    //     axios.get(`${API_URL}/getAllProducts`).then((res) => {
+    //         setData(res.products);
+    //     });
+    // });
+
     return (
         <div className="home__container">
             <img
@@ -10,7 +22,7 @@ export default function Home() {
                 className="banner__image"
                 alt="not found"
             />
-
+            
             <div className="home__row">
                 <Product
                     id="5234523"
@@ -66,6 +78,8 @@ export default function Home() {
                     rating={5}
                 />
             </div>
+
+         
         </div>
     );
 }

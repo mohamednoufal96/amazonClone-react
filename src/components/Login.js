@@ -10,6 +10,7 @@ function Login() {
     };
 
     const handleCreateAccount = () => {};
+    
     return (
         <div className="login">
             <Link to="/">
@@ -24,9 +25,9 @@ function Login() {
                 <h1 className="login__title">Sign-in</h1>
 
                 <form action="">
-                    <h5 className="login__label">Email</h5>
+                    <h5>Email</h5>
                     <input type="text" value={email} onChange={(event) => setEmail(event.target.value)} required />
-                    <h5 className="login__label">Password</h5>
+                    <h5>Password</h5>
                     <input
                         type="password"
                         value={password}
@@ -42,10 +43,11 @@ function Login() {
                     By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please see our Privacy
                     Notice, our Cookies Notice and our Interest-Based Ads Notice.
                 </p>
-
-                <button className="login__createAccountButton" onClick={handleCreateAccount}>
-                    Create Amazon Account
-                </button>
+                <Link to="/signup">
+                    <button className="login__createAccountButton" onClick={handleCreateAccount}>
+                        Create Amazon Account
+                    </button>
+                </Link>
             </div>
         </div>
     );
