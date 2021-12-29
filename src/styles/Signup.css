@@ -61,3 +61,8 @@
 .signup__container form button:hover {
     background-color: #e99528;
 }
+
+.signup__alert {
+    color: red;
+    line-height: 2;
+}
