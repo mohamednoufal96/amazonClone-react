@@ -76,6 +76,15 @@
     background-color: rgb(160, 156, 156);
 }
 
+.login__google {
+    width: 95%;
+    margin-bottom: 10px;
+}
+
+.login__google button {
+    width: 100%;
+}
+
 .login__description {
     width: 95%;
     margin-bottom: 10px;

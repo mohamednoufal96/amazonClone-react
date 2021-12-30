@@ -7,17 +7,20 @@ import { useStateValue } from "../StateProvider";
 export default function Home() {
     const API_URL = require("../constants").API_URL;
 
-    const [data, setData] = useState([]);
+    const [productsData, setProductsData] = useState([]);
 
     useEffect(() => {
         axios
             .get(`${API_URL}/getProductDetails`)
             .then((res) => {
-                setData(res.products);
+                setProductsData(res.data.products);
+                console.log(res.data.products);
             })
             .catch((error) => {
                 console.log(error);
             });
+
+        console.log(productsData);
     });
 
     return (
@@ -28,6 +31,7 @@ export default function Home() {
                 alt="not found"
             />
 
+            {/*  
             <div className="home__row">
                 <Product
                     id="5234523"
@@ -82,6 +86,22 @@ export default function Home() {
                     price={99.99}
                     rating={5}
                 />
+            </div>
+            */}
+
+            <div className="home__products__container">
+                {productsData.map((item, index) => {
+                    return (
+                        <Product
+                            key={index}
+                            id={item.id}
+                            title={item.name}
+                            image={item.image}
+                            price={item.price}
+                            rating={item.rating}
+                        ></Product>
+                    );
+                })}
             </div>
         </div>
     );

@@ -1,12 +1,9 @@
 .product {
+    flex:auto;
     min-width: 200px;
-    /* max-width: 400px; */
-    max-height: 400px;
+    height: 400px;
     display: flex;
-    flex: 1;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
     background-color: #fff;
     z-index: 10;
     margin: 10px;
@@ -14,10 +11,13 @@
 }
 
 .product__info {
+    flex: 1;
     margin: 10px 0;
 }
 
-
+.product__title {
+    /* max-width: 400px; */
+}
 
 .product__price {
     margin: 5px 0;
@@ -41,9 +41,9 @@
     color: black;
     align-self: center;
     cursor: pointer;
-    transition: ease-in-out .2s;
+    transition: ease-in-out 0.2s;
 }
 
-.product > button:hover{
+.product > button:hover {
     background-color: #e99528;
 }

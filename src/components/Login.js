@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../constants";
 import { useHistory } from "react-router-dom";
+import GoogleLogin from "react-google-login";
 
 import "../styles/Login.css";
 import { useStateValue } from "../StateProvider";
@@ -10,7 +11,6 @@ import { useStateValue } from "../StateProvider";
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [user, setUser] = useState(undefined);
     const [loginError, setLoginError] = useState(undefined);
 
     const [{}, dispatch] = useStateValue();
@@ -33,9 +33,6 @@ function Login() {
         })
             .then((result) => {
                 const { user } = result.data;
-                // localStorage.setItem("user", JSON.stringify(user));
-                setUser(user);
-
                 dispatch({
                     type: "SET__USER",
                     user: user,
@@ -49,6 +46,33 @@ function Login() {
                 console.log(err);
                 setLoginError("Incorrect username or password");
             });
+    };
+
+    const handleGoogleLoginSuccess = (event) => {
+        let userDetails = event.profileObj;
+
+        let googleUser = {
+            firstName: userDetails.familyName,
+            secondName: userDetails.givenName,
+            email: userDetails.email,
+        };
+
+        dispatch({
+            type: "SET_USER",
+            user: googleUser,
+        });
+        console.log("USER IS >> ", googleUser);
+        debugger;
+
+        history.push("/");
+    };
+
+    const handleGoogleLoginFailure = (event) => {
+        debugger;
+        dispatch({
+            type: "SET_USER",
+            user: undefined,
+        });
     };
 
     return (
@@ -85,6 +109,16 @@ function Login() {
                     By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please see our Privacy
                     Notice, our Cookies Notice and our Interest-Based Ads Notice.
                 </p>
+                <div className="login__google">
+                    <GoogleLogin
+                        clientId="991118810796-na4l7pr09drkt38jmii12f4ocknoakig.apps.googleusercontent.com"
+                        buttonText="Continue with google"
+                        onSuccess={handleGoogleLoginSuccess}
+                        onFailure={handleGoogleLoginFailure}
+                        cookiePolicy={"single_host_origin"}
+                    />
+                </div>
+
                 <Link to="/signup">
                     <button className="login__createAccountButton">Create new amazon account</button>
                 </Link>
