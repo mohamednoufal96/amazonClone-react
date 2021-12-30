@@ -1,7 +1,6 @@
 export const initialState = {
     basket: [],
     user: undefined,
-    isLoggedIn: false,
 };
 
 // selector
@@ -32,10 +31,10 @@ const reducer = (state, action) => {
                 ...state,
                 basket: newBasket,
             };
-        case "SET_THE_USER":
+        case "SET__USER":
             return {
-                user: action.item.user,
-                isLoggedIn: action.item.isLoggedIn,
+                ...state,
+                user: action.user,
             };
 
         default:

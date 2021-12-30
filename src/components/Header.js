@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom";
@@ -8,7 +8,21 @@ import { useStateValue } from "../StateProvider";
 const linkStyle = { textDecoration: "none", color: "white" };
 
 export default function Header() {
-    const [{ basket, user, isLoggedIn }] = useStateValue();
+    const [{ basket, user }, dispatch] = useStateValue();
+
+    useEffect(() => {
+        console.log("Header component: ", user);
+    });
+
+    const handleUser = () => {
+        debugger
+        if (user) {
+            dispatch({
+                type: "SET_USER",
+                user: undefined,
+            });
+        }
+    };
 
     return (
         <div className="header">
@@ -20,16 +34,12 @@ export default function Header() {
                 <SearchIcon className="header__searchIcon"></SearchIcon>
             </div>
             <div className="header__nav">
-                <div className="header__navOption">
-                    <span className="navOption__lineOne">Hello</span>
-                    {isLoggedIn ? (
-                        <span className="navOption__lineTwo">{user.secondName}</span>
-                    ) : (
-                        <Link to="/login" style={linkStyle}>
-                            <span className="navOption__lineTwo">Sign in</span>
-                        </Link>
-                    )}
-                </div>
+                <Link to={!user && "/login"} style={linkStyle}>
+                    <div className="header__navOption" onClick={handleUser}>
+                        <span className="navOption__lineOne">Hello {user ? user.firstName : "Guest"}</span>
+                        <span className="navOption__lineTwo">{user ? "Sign Out" : "Sign In"}</span>
+                    </div>
+                </Link>
                 <div className="header__navOption">
                     <span className="navOption__lineOne">Returns</span>
                     <span className="navOption__lineTwo">&#38; Orders</span>

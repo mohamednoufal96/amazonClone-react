@@ -11,10 +11,9 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [user, setUser] = useState(undefined);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loginError, setLoginError] = useState(undefined);
 
-    const [dispatch] = useStateValue();
+    const [{}, dispatch] = useStateValue();
 
     const history = useHistory();
 
@@ -34,25 +33,20 @@ function Login() {
         })
             .then((result) => {
                 const { user } = result.data;
-                localStorage.setItem("user", JSON.stringify(user));
-                localStorage.setItem("isLoggedIn", true);
+                // localStorage.setItem("user", JSON.stringify(user));
                 setUser(user);
-                setIsLoggedIn(true);
-                setIsLoggedIn(false);
 
                 dispatch({
-                    type: "SET_THE_USER",
-                    item: {
-                        user,
-                        isLoggedIn,
-                    },
+                    type: "SET__USER",
+                    user: user,
                 });
+
+                console.log("USER IS >> ", user);
 
                 history.push("/");
             })
             .catch((err) => {
                 console.log(err);
-                setIsLoggedIn(false);
                 setLoginError("Incorrect username or password");
             });
     };
