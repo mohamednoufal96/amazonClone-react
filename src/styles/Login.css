@@ -79,10 +79,16 @@
 .login__google {
     width: 95%;
     margin-bottom: 10px;
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
 }
 
 .login__google button {
     width: 100%;
+}
+
+.login__google:hover{
+    background-color: #74a3b8;
 }
 
 .login__description {

@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../StateProvider";
-import { getBasketTotal } from "../reducer";
+import { getBasketTotal, getUserState } from "../reducer";
 import { API_URL } from "../constants";
 import { useHistory } from "react-router-dom";
 import "../styles/Subtotal.css";
 
 function Subtotal() {
     const [{ basket, user }] = useStateValue();
+    const [_user, setUser] = useState();
     const history = useHistory();
     const basketTotal = getBasketTotal(basket);
+
+    useEffect(() => {
+        if (user) {
+            setUser(user);
+        }
+    });
 
     const [addProductAlert, setAddProductAlert] = useState("");
 
     const goToPaymentHandler = () => {
-        if (user && basketTotal > 0) {
+        if (_user && basketTotal > 0) {
             debugger;
             // if logged in then go for payment
             // add the logic to make the payment
@@ -38,9 +45,10 @@ function Subtotal() {
                 .catch((err) => {
                     console.log(err);
                 });
-        } else if (user) {
+        } else if (_user) {
             setAddProductAlert("Please add some products to your basket  !");
         } else {
+            alert("Please login to checkout !");
             history.push("/login");
         }
     };
@@ -127,7 +135,7 @@ function Subtotal() {
                 prefix={"$"}
             />
             {addProductAlert ? <h5 className="subtotal__addProduct__alert">{addProductAlert}</h5> : null}
-            <button className="checkout__button" onClick={goToPaymentHandler}>
+            <button className="subtotal__checkoutButton" onClick={goToPaymentHandler}>
                 Proceed to Checkout
             </button>
         </div>

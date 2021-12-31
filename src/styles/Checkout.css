@@ -5,12 +5,19 @@
 }
 
 .checkout__left {
-    /* width: 100%; */
+    margin-right: 20px;
     flex: auto;
+}
+
+.chekout__right {
+    flex: auto;
+    margin-left: 20px;
 }
 
 .checkout__adImage {
     width: 100%;
+    object-fit: center;
+    object-position: top;
     max-height: 120px;
     margin-bottom: 10px;
 }
@@ -20,4 +27,3 @@
     padding: 10px;
     border-bottom: 1px solid lightgrey;
 }
-

@@ -111,7 +111,7 @@ function Login() {
                 </p>
                 <div className="login__google">
                     <GoogleLogin
-                        clientId="991118810796-na4l7pr09drkt38jmii12f4ocknoakig.apps.googleusercontent.com"
+                        clientId="458251450023-85vqpihflut93lg6evbk4nl4qhkft4tu.apps.googleusercontent.com"
                         buttonText="Continue with google"
                         onSuccess={handleGoogleLoginSuccess}
                         onFailure={handleGoogleLoginFailure}
