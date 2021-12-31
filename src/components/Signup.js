@@ -10,7 +10,6 @@ function Signup() {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [signUpError, setSignupError] = useState(undefined);
 
     const history = useHistory();
@@ -32,17 +31,14 @@ function Signup() {
         })
             .then((result) => {
                 const { user } = result.data;
-                localStorage.setItem("user", JSON.stringify(user));
-                localStorage.setItem("isLoggedIn", true);
+                // localStorage.setItem("user", JSON.stringify(user));
 
                 setUser(user);
-                setIsLoggedIn(true);
                 history.push("/");
             })
             .catch((err) => {
                 console.log(err);
 
-                setIsLoggedIn(false);
                 setSignupError("Error Signing Up");
             });
     };

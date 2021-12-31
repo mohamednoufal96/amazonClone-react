@@ -1,7 +1,7 @@
 .subtotal {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    /* width: 300px; */
     min-height: 150px;
     justify-content: space-between;
     padding: 20px;
@@ -24,4 +24,9 @@
     border: 1px solid #af883e;
     border-radius: 5px;
     color: #111;
+}
+
+.subtotal__addProduct__alert {
+    line-height: 2;
+    color: #ad4747;
 }

@@ -5,7 +5,8 @@
 }
 
 .checkout__left {
-    width: 100%;
+    /* width: 100%; */
+    flex: auto;
 }
 
 .checkout__adImage {
